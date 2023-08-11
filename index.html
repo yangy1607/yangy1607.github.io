@@ -1,297 +1,189 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://example.com/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hexo',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-08-11 20:50:15'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
   
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
   
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<meta name="generator" content="Hexo 6.3.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-第一篇博客喔喔喔" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/08/11/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E5%96%94%E5%96%94%E5%96%94/" class="article-date">
-  <time class="dt-published" datetime="2023-08-11T12:03:09.000Z" itemprop="datePublished">2023-08-11</time>
-</a>
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/08/11/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E5%96%94%E5%96%94%E5%96%94/">第一篇博客喔喔喔</a>
-    </h1>
-  
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr class="custom-hr"/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Hexo"><span class="site-name">Hexo</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Hexo</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2023/08/11/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E5%96%94%E5%96%94%E5%96%94/" title="第一篇博客喔喔喔">第一篇博客喔喔喔</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-08-11T12:03:09.000Z" title="Created 2023-08-11 20:03:09">2023-08-11</time></span></div><div class="content">海森堡不确定性原理的的丐版讨论 Yu Yang
+$                     Department\ of \ Mathematics \ and \ Physics $ ,$ Akademie    \   Olympia$
+一段个人理解不一定对本征值是是力学量算符自己就有的本征值。
+理论上根据波函数计算出来本征值的加权平均值，得到期望值
+实验上，多次测量得到的测量值取加权平均得到平均值。
+在这个态是算符对应的本征态时，本征值等于期望值等于平均值
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="海森堡不确定性原理的的丐版讨论"><a href="#海森堡不确定性原理的的丐版讨论" class="headerlink" title="海森堡不确定性原理的的丐版讨论"></a>海森堡不确定性原理的的丐版讨论</h1><p> Yu Yang</p>
-<p>$                     Department\ of \ Mathematics \ and \ Physics $ ,$ Akademie    \   Olympia$</p>
-<h2 id="一段个人理解不一定对"><a href="#一段个人理解不一定对" class="headerlink" title="一段个人理解不一定对"></a>一段个人理解不一定对</h2><p>本征值是是力学量算符自己就有的本征值。</p>
-<p>理论上根据波函数计算出来本征值的加权平均值，得到期望值</p>
-<p>实验上，多次测量得到的测量值取加权平均得到平均值。</p>
-<p>在这个态是算符对应的本征态时，本征值等于期望值等于平均值</p>
-<blockquote>
-<p>但是下述计算全是对的</p>
-</blockquote>
-<h2 id="本征方程"><a href="#本征方程" class="headerlink" title="本征方程"></a>本征方程</h2><ul>
-<li><p>对于一个量子体系，我们总要选取合适的表象。你无须晓得表象是什么，你总知道，<strong>要选一些力学量来描述这个体系</strong>，就如同经典力学中一样哒。</p>
-</li>
-<li><p>不管你学的哪本书，他总会告诉你一些事情，然后告诉你，<strong>量子力学里力学量要变成算符。</strong></p>
-</li>
-</ul>
-<p>根据这两点基础的认识，让我们看看力学量算符应该长啥样子</p>
-<h3 id="一般意义上的算符"><a href="#一般意义上的算符" class="headerlink" title="一般意义上的算符"></a>一般意义上的算符</h3><p>算符是一个操作，$operator$.在有限维的线性代数中，算符要定义在线性空间里，意思是说，我有一堆矢量$abc…$，每个矢量是一个元素，它们的集合，如果满足数学书上的要求，就构成一个线性空间{abc…}.</p>
-<p>在线性空间中，存在一个操作$\hat{F}$，它作用在矢量上，仍然得到矢量<br>$$<br>\hat F a&#x3D;b<br>$$<br>得到的矢量，仍然属于这个线性空间<br>$$<br>b\in \left{ abc… \right}<br>$$<br>这就是线性空间{abc…}上算符的定义。根据这个定义，显然算符要作用在矢量上才有意义。</p>
-<h3 id="力学量算符"><a href="#力学量算符" class="headerlink" title="力学量算符"></a>力学量算符</h3><p>现在我们来看看，我们把要力学量变成算符$\hat F$，需要满足哪些物理上的要求</p>
-<ul>
-<li>力学量算符必须是线性的</li>
-</ul>
-<p>一方面，薛定谔方程<br>$$<br>i\hbar \frac{\partial}{\partial t}\varPsi &#x3D;\hat{H}\varPsi<br>$$<br>是线性方程。哈密顿算符是线性算符，这得到了实验的检验。这引导我们，是不是其它力学量算符也是线性的呢</p>
-<p>另一方面，严格来讲量子态用态矢描述（但是好多书都不严格，说波函数描述量子态，这个说法不严格)。如同一般矢量，态矢张成一个线性空间，就是希尔伯特空间，这就是量子力学的态空间。所以，我们要求力学量算符要定义在希尔伯特空间中。对线性空间中的三个元素，根据线性叠加原理<br>$$<br>|\varPsi \rangle &#x3D;\lambda |a\rangle +\eta |b\rangle<br>$$<br>则<br>$$<br>\hat{F}|\varPsi \rangle &#x3D;\hat{F}\left( \lambda |a\rangle +\eta |b\rangle \right) &#x3D;\lambda \hat{F}|a\rangle +\eta \hat{F}|b\rangle<br>$$<br>可见，它是个线性算符</p>
-<ul>
-<li>力学量算符必须是厄密算符</li>
-</ul>
-<p>牛顿力学在实数域讨论问题，力学量是实数，可以测量。力学量变成算符后，算符并不是一个数，没法做实验测量。于是退而求其次，算符既然不是实数，我们找个办法，看看它如何才能对应到一个实数。算符作用在态上才有意义，根据线性算符的定义<br>$$<br>\hat{F}|\varPsi \rangle &#x3D;|\varphi \rangle ,,<br>$$<br>得到另一个态矢。态矢表示量子态，往往是复数，这个结果并不一定是一个实数。但是这个结果包含了$\hat{F}$  和$| \varPsi \rangle $的信息，它是一个有用的复矢量。考虑到最终要得到实数，我们可以构造复矢量的内积，这样就得到一个实数<br>$$<br>\langle \varPsi |\hat{F}|\varPsi \rangle<br>$$<br>这相当于<br>$$<br>\left( \varPsi ,\hat{F}\varPsi \right)<br>$$<br>这就是算符的期待值，记为<br>$$<br>\langle \hat{F}\rangle &#x3D;\langle \varPsi |\hat{F}|\varPsi \rangle<br>$$<br>你也可以尝试其它的办法构造，但是都显得比较麻烦，这个构造办法最简洁。这样我们就得到了一个实数，就是期待值，它和算符对应。注意，期待值是我们根据波函数，在理论上算出来的。注意，这里面态矢是任意的，对任意态都可以构造这样一个实数。我们也可以做如下定义，作加权平均，这是另一种期待值的定义<br>$$<br>\langle \hat{F}\rangle &#x3D;\frac{\langle \varPsi |\hat{F}|\varPsi \rangle}{\langle \varPsi |\varPsi \rangle}<br>$$<br>期待值是一个实数，所以<br>$$<br>\langle \hat{F}\rangle ^*&#x3D;\langle \hat{F}\rangle \Leftrightarrow \langle \varPsi |\hat{F}|\varPsi \rangle ^*&#x3D;\langle \varPsi |\hat{F}|\varPsi \rangle<br>$$<br>令<br>$$<br>|\varPsi \rangle &#x3D;\lambda |a\rangle +\eta |b\rangle<br>$$<br>则<br>$$<br>\langle \varPsi |&#x3D;\lambda ^<em>\langle a|+\eta ^</em>\langle b|<br>$$<br>代入11,左边<br>$$<br>\langle \hat{F}\rangle &#x3D;\langle \left( \lambda ^<em>\langle a|+\eta ^</em>\langle b| \right) |\hat{F}|\left( \lambda |a\rangle +\eta |b\rangle \right) \rangle<br>\<br>&#x3D;\lambda ^2\langle a|\hat{F}|a\rangle +\eta ^{2}\langle b|\hat{F}|b\rangle +\lambda ^<em>\eta \langle a|\hat{F}|b\rangle +\eta^</em> \lambda \langle b|\hat{F}|a\rangle<br>$$<br>右边<br>$$<br>\langle \hat{F}\rangle ^*&#x3D;\langle \left( \lambda ^<em>\langle a|+\eta ^</em>\langle b| \right) |\hat{F}|\left( \lambda |a\rangle +\eta |b\rangle \right) \rangle ^*<br>\<br>&#x3D;\lambda ^2\langle a|\hat{F}|a\rangle ^*+\eta ^{2}\langle b|\hat{F}|b\rangle ^*+\lambda \eta ^<em>\langle a|\hat{F}|b\rangle ^</em>+\eta \lambda ^<em>\langle b|\hat{F}|a\rangle ^</em><br>\<br>$$<br>对应系数相等，于是<br>$$<br>\begin{cases}<br>    \langle a|\hat{F}|b\rangle &#x3D;\langle b|\hat{F}|a\rangle ^<em>\<br>    \langle b|\hat{F}|a\rangle &#x3D;\langle a|\hat{F}|b\rangle ^</em>\<br>\end{cases}<br>$$<br>这相当于<br>$$<br>\begin{cases}<br>    \left( a,\hat{F}b \right) &#x3D;\left( b,\hat{F}a \right) ^*&#x3D;\left( \hat{F}a,b \right)\<br>    \left( b,\hat{F}a \right) &#x3D;\left( a,\hat{F}b \right) ^*&#x3D;\left( \hat{F}b,a \right)\<br>\end{cases},,<br>$$<br>我们发现，得到的上述二式等价，而且这就是厄密算符$Hermitian\ operator$的定义</p>
-<h2 id="力学量算符的本征态和本征值"><a href="#力学量算符的本征态和本征值" class="headerlink" title="力学量算符的本征态和本征值"></a>力学量算符的本征态和本征值</h2><p>事实上，我们能够计算的是算符$\hat{F}$本身，上面我们为了能做实验，把它对应到一个实数$\langle \hat{F}\rangle &#x3D;\langle \varPsi |\hat{F}|\varPsi \rangle$。我们管它叫期待值。这就是说，我们在量子力学能够算的和能够测的不是一个东西。现在一个很自然的问题是，我们的理论计算和实验测量有什么关系？不管它俩是什么关系，我们总可以试着定义一个偏差，令<br>$$<br>\varDelta \hat{F}&#x3D;\hat{F}-\langle \hat{F}\rangle<br>$$<br>这个偏差是一个算符，仍然没法测量。于是把它变成数，考虑偏差的期待值<br>$$<br>\begin{align}<br>,,\left&lt; \varDelta \hat{F} \right&gt; &amp;&#x3D;\left&lt; \hat{F}-\langle \hat{F}\rangle \right&gt;<br>\<br>&amp;&#x3D;\langle \hat{F}\rangle -\left&lt; \langle \hat{F}\rangle \right&gt;<br>\<br>&amp;&#x3D;\langle \hat{F}\rangle -\langle \hat{F}\rangle<br>\<br>&amp;&#x3D;0<br>\end{align}<br>$$<br>20-21利用了一个结论：数的期待值是自己。发现上述定义的偏差的期待值为零，这没有意义，不是一个好的定义。于是再次尝试，定义一个新的偏差，按照方便好用的原则，取算符的方差（取成别的幂次也行，也能算，但是不够简单）<br>$$<br>\begin{align}<br>&lt;\left( \varDelta \hat{F} \right) ^2&gt; &amp;&#x3D;\langle \varPsi |\left( \varDelta \hat{F} \right) ^2|\varPsi \rangle<br>\<br>&amp;&#x3D;\langle \varPsi |\left( \hat{F}-\langle \hat{F}\rangle \right) ^2|\varPsi \rangle<br>\<br>&amp;&#x3D;\langle \varPsi |\left( \hat{F}-\langle \hat{F}\rangle \right) \left( \hat{F}-\langle \hat{F}\rangle \right) |\varPsi \rangle<br>\<br>&amp;&#x3D;\langle \varPsi |\left( \hat{F}-\langle \hat{F}\rangle \right) ^{\dagger}\left( \hat{F}-\langle \hat{F}\rangle \right) |\varPsi \rangle<br>\<br>&amp;&#x3D;\left| \left( \hat{F}-\langle \hat{F}\rangle \right) |\varPsi \rangle \right| ^2<br>\end{align}<br>$$<br>从25-26利用了厄密算符的性质<br>$$<br>\hat{F}&#x3D;\hat{F}^{\dagger}\text{，以及厄密算符的期待值是实数}<br>$$<br>这样定义的偏差，结果不总为零，偏差的结果告诉我们，当当偏差为零时$&lt;\left( \varDelta \hat{F} \right) ^2&gt; &#x3D;0$，按23$\varDelta \hat{F}&#x3D;0$,即$\varDelta \hat{F}|\varPsi \rangle &#x3D;0$,根据18，有<br>$$<br>\left( \hat{F}-\langle \hat{F}\rangle \right) |\varPsi \rangle &#x3D;0<br>$$<br>即<br>$$<br>\hat{F}|\varPsi \rangle &#x3D;\langle \hat{F}\rangle |\varPsi \rangle<br>$$<br>偏差为零就是说，算符与它对应的实数，也就是算符的期待值一致。这就告诉我们，这种情况下，我们拿来一个算符，对于一个态，理论计算可以得到一个期待值。这时我们得到了方程30。对任意的态，偏差不一定为零。但是对于一些特殊的态，偏差为零，我们就可以得到上述的方程。这样的方程就是算符的本征方程，态是本征态，算符在本征态上取本征值。注意不是所有的算符都有本征问题，但是厄密算符必有本征问题</p>
-<h2 id="厄密算符的本征问题"><a href="#厄密算符的本征问题" class="headerlink" title="厄密算符的本征问题"></a>厄密算符的本征问题</h2><ul>
-<li>厄密算符的本征值是实数，这是一个物理要求。下面给出证明</li>
-</ul>
-<p>利用一个结论，厄密算符必有本征值，利用本征值标记态，有本征方程<br>$$<br>\hat{F}|f\rangle &#x3D;f|f\rangle<br>$$</p>
-<p>$$<br>\langle f|\hat{F}|f\rangle &#x3D;\langle f|f|f\rangle &#x3D;f\langle f|f\rangle &#x3D;f<br>\<br>\langle f|\hat{F}|f\rangle ^*&#x3D;\langle f|\hat{F}^{\dagger}|f\rangle &#x3D;\langle f|\hat{F}|f\rangle &#x3D;f^*&#x3D;f<br>$$</p>
-<p>QED</p>
-<ul>
-<li>厄密算符的本征矢正交归一完备，证明从略</li>
-<li>厄密算符的期待值</li>
-</ul>
-<p>有了厄密算符的本征问题，我们来看看厄密算符的期待值是个啥玩意</p>
-<p>对任意厄密算符，在任意态上有期待值<br>$$<br>\langle \hat{F}\rangle &#x3D;\langle \varPsi |\hat{F}|\varPsi \rangle<br>$$<br>根据态叠加原理，任意态可用本征态展开<br>$$<br>|\varPsi \rangle &#x3D;\sum_f{C_f}|f\rangle<br>$$<br>代入期待值<br>$$<br>\begin{align}<br>\langle \hat{F}\rangle &amp;&#x3D;\sum_{ff^{\prime}}{\langle f^{\prime}|C_{f^{\prime}}^{<em>}}\hat{F}C_f|f\rangle<br>\<br>&amp;&#x3D;\sum_{ff^{\prime}}{C_{f^{\prime}}^{</em>}C_f\langle f^{\prime}|}\hat{F}|f\rangle<br>\<br>&amp;&#x3D;\sum_{ff^{\prime}}{C_{f^{\prime}}^{<em>}C_ff\langle f^{\prime}}|f\rangle<br>\<br>&amp;&#x3D;\sum_{ff^{\prime}}{C_{f^{\prime}}^{</em>}C_ff\delta _{ff^{\prime}}}<br>\<br>&amp;&#x3D;\sum_f{\left| C_f \right|^2f}<br>\end{align}<br>$$<br>我们得到了期待值与本征值的关系<br>$$<br>\langle \hat{F}\rangle &#x3D;\sum_f{\left| C_f \right|^2f}<br>$$<br>在概率论中，有类似的关系<br>$$<br>\langle \hat{F}\rangle &#x3D;\sum_f{P_ff}<br>$$<br>其中$P$是几率，$\langle \hat{F}\rangle$是平均值。如果我们相信波恩的几率解释，$\left| C_f \right|^2$就是几率，$\langle \hat{F}\rangle$就是平均值。即使不相信波恩，他也是个合理的权重。</p>
-<h2 id="一种推导方式：可推导得到原理"><a href="#一种推导方式：可推导得到原理" class="headerlink" title="一种推导方式：可推导得到原理"></a>一种推导方式：可推导得到原理</h2><p>对一个力学量，在本征态上测量它可以得到精确值。同时测量两个力学量，能否同时测准？我们来看看偏差.两个力学量的偏差同时为零，就是同时测准</p>
-<p>设有两个算符$\hat A$和$\hat B$,彼此不对易，<br>$$<br>[\hat A,\hat B]&#x3D;i\hat C<br>$$<br>根据偏差定义<br>$$<br>&lt;\left( \varDelta \hat{A} \right) ^2&gt;&#x3D;\left| \left( \hat{A}-\langle \hat{A}\rangle \right) |\varPsi \rangle \right| ^2&#x3D;\left| |a\rangle \right| ^2<br>\<br>&lt;\left( \varDelta \hat{B} \right) ^2&gt;&#x3D;\left| \left( \hat{B}-\langle \hat{B}\rangle \right) |\varPsi \rangle \right| ^2&#x3D;\left| |b\rangle \right| ^2<br>$$<br>偏差在此，求偏差的最小值，利用不等式。此处需要与矢量模相关的不等式</p>
-<p>根据柯西-施瓦茨不等式，<br>$$<br>\sqrt[2]{\left| |a\rangle \right| ^2\left| |b\rangle \right| ^2}\geqslant \left| \langle a|b\rangle \right|<br>$$<br>进一步，根据复数模<br>$$<br>\left| \langle a|b\rangle \right|\geqslant \left| \mathrm{Im}\langle a|b\rangle \right|<br>$$<br>则<br>$$<br>\begin{align}<br>\sqrt[2]{&lt;\left( \varDelta \hat{A} \right) ^2&gt;&lt;\left( \varDelta \hat{B} \right) ^2&gt;}&amp;\geqslant \frac{1}{2i}\left| \langle \varPsi |\left( \hat{A}-\langle \hat{A}\rangle \right) ^{\dagger}\left( \hat{B}-\langle \hat{B}\rangle \right) |\varPsi \rangle -\langle \varPsi |\left( \hat{B}-\langle \hat{B}\rangle \right) ^{\dagger}\left( \hat{A}-\langle \hat{A}\rangle \right) |\varPsi \rangle \right|<br>\<br>&amp;&#x3D;\frac{1}{2i}\left| \langle \varPsi |\left( \hat{A}-\langle \hat{A}\rangle \right) \left( \hat{B}-\langle \hat{B}\rangle \right) |\varPsi \rangle -\langle \varPsi |\left( \hat{B}-\langle \hat{B}\rangle \right) \left( \hat{A}-\langle \hat{A}\rangle \right) |\varPsi \rangle \right|<br>\<br>&amp;&#x3D;\frac{1}{2i}\left| \langle \varPsi |\hat{A}\hat{B}-\hat{B}\hat{A}|\varPsi \rangle \right|<br>\<br>&amp;&#x3D;\frac{1}{2i}\left| \langle \varPsi |\left[ \hat{A},\hat{B} \right] |\varPsi \rangle \right|<br>\<br>&amp;&#x3D;\frac{1}{2}\left| \langle C\rangle \right|<br>\end{align}<br>$$<br>记<br>$$<br>\varDelta A&#x3D;\sqrt{&lt;\left( \varDelta \hat{A} \right) ^2&gt;},\varDelta B&#x3D;\sqrt{&lt;\left( \varDelta \hat{B} \right) ^2&gt;}<br>$$<br>于是<br>$$<br>\varDelta A\varDelta B\geqslant \frac{1}{2}\left| \langle C\rangle \right|<br>$$<br>注意，1&#x2F;2来自我们选择偏差为方差。选择其它幂次，系数就不一样了。所以，系数并不重要。</p>
-<p>注意，对于任意两个正则共轭变量，都有不确定关系。</p>
-<p>设有两个算符$\hat A$和$\hat B$,彼此对易，则偏差为零，能同时测准。这是啥呢，这不就是力学量完全集的其中一条要求么。</p>
+但是下述计算全是对的
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/08/11/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E5%96%94%E5%96%94%E5%96%94/" data-id="cll6jplf00000ccva7hsgb4th" data-title="第一篇博客喔喔喔" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
+本征方程
+对于一个量子体系，我们总要选取合适的表象。你无须晓得表象是什么，你总知道，要选一些力学量来描述这个体系，就如同经典力学中一样哒。
+
+不管你学的哪本书，他总会告诉你一些事情，然后告诉你，量子力学里力学量要变成算符。
 
 
+根据这两点基础的认识，让我们看看力学量算符应该长啥样子
+一般意义上的算符算符是一个操作，$operator$.在有限维的线性代数中，算符要定义在线性空间里，意思是说，我有一堆矢量$abc…$，每个矢量是一个元素，它们的集合，如果满足数学书上的要求，就构成一个线性空间{abc…} ...</div></div></div><div class="recent-post-item"><div class="recent-post-info"><a class="article-title" href="/2023/08/11/hello-world/" title="Hello World">Hello World</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2023-08-11T10:13:53.031Z" title="Created 2023-08-11 18:13:53">2023-08-11</time></span></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;
 
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/08/11/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2023-08-11T10:13:53.031Z" itemprop="datePublished">2023-08-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2023/08/11/hello-world/">Hello World</a>
-    </h1>
-  
+More info: Writing
+Run server1$ hexo server
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+More info: Server
+Generate static files1$ hexo generate
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+More info: Generating
+Deploy to remote sites1$ hexo deploy
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/08/11/hello-world/" data-id="cll6ggma200000svaaytn3912" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/08/11/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E5%96%94%E5%96%94%E5%96%94/">第一篇博客喔喔喔</a>
-          </li>
-        
-          <li>
-            <a href="/2023/08/11/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2023 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+More info: Deployment
+</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><div class="content"><a class="title" href="/2023/08/11/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E5%96%94%E5%96%94%E5%96%94/" title="第一篇博客喔喔喔">第一篇博客喔喔喔</a><time datetime="2023-08-11T12:03:09.000Z" title="Created 2023-08-11 20:03:09">2023-08-11</time></div></div><div class="aside-list-item"><div class="content"><a class="title" href="/2023/08/11/hello-world/" title="Hello World">Hello World</a><time datetime="2023-08-11T10:13:53.031Z" title="Created 2023-08-11 18:13:53">2023-08-11</time></div></div></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/08/"><span class="card-archive-list-date">August 2023</span><span class="card-archive-list-count">2</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">2</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-08-11T12:50:15.488Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
