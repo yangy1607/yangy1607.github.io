@@ -71,6 +71,96 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-傅里叶变换" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/08/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/" class="article-date">
+  <time class="dt-published" datetime="2026-05-08T12:46:12.698Z" itemprop="datePublished">2026-05-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="傅里叶变换"><a href="#傅里叶变换" class="headerlink" title="傅里叶变换"></a>傅里叶变换</h1><p>根据欧拉公式<br>$$<br>e^{i\varphi}&#x3D;\cos \varphi +i\sin \varphi<br>$$<br>一般的波动<br>$$<br>y&#x3D;A\sin \left( kx-\omega t+\alpha\right)<br>$$<br>可以表示为指数形式<br>$$<br>y&#x3D;Ae^{i\left( kx-\omega t+\alpha \right)}<br>$$<br>波是振动在时空中的传播，令时间周期为T,则振动的时间频率</p>
+<p>$$<br>\omega &#x3D;\frac{2\pi}{T}<br>$$<br>令空间周期为$\lambda$,则振动的空间频率<br>$$<br>k &#x3D;\frac{2\pi}{\lambda}<br>$$</p>
+<h2 id="分析中正交函数系的一个重要来源-傅里叶方法-分离变量法"><a href="#分析中正交函数系的一个重要来源-傅里叶方法-分离变量法" class="headerlink" title="分析中正交函数系的一个重要来源-傅里叶方法&#x2F;分离变量法"></a>分析中正交函数系的一个重要来源-傅里叶方法&#x2F;分离变量法</h2><p>研究物理量随时间变化，导致以时间为自变量的<strong>常微分方程</strong>。场是物理量的时空分布，研究场的运动，导致<strong>偏微分方程。<strong>求解方程时，考虑系统处在环境中，环境的影响通过边界传给系统，这提供了</strong>边界条件</strong>。考虑系统有它的历史，系统演化和初始状态有关，这提供了<strong>初始条件</strong>。边界条件和初始条件都是定解条件，数学物理方程作为泛定方程，在定解条件下，成为<strong>定解问题</strong>。</p>
+<p>考虑一类定解问题：在有界区间$[0,l]$两端固定弦的自由振动，有弦振动方程<br>$$<br>\frac{\partial ^2}{\partial t^2}u&#x3D;a^2\frac{\partial ^2}{\partial x^2}u<br>$$<br>其中$u&#x3D;u(x,y,z,t)$是弦的振幅或形状，系数$a$依赖于弦的密度和弹性模量。</p>
+<p>任意时刻，弦两端固定，位移为零，给出初始位置的边界条件<br>$$<br>u(x,t)\mid_{x&#x3D;0}^{}&#x3D;0<br>$$</p>
+<p>$$<br>u(x,t)\mid_{x&#x3D;l}^{}&#x3D;0<br>$$</p>
+<p>这是第一类边界条件，即$Dirichlet$边界条件</p>
+<blockquote>
+<p>在哥廷根大学，$Riemann$最初学习哲学和神学，哥廷根的数学之神高斯发现了他的数学天赋，把他送到柏林大学。在那里，他遇到了$Dirichlet$，$Yacobbi$等数学家。有一种说法是，$Riemann$15年的数学贡献了19世纪数学的一半。重返哥廷根之后，他的演讲几何基础的假设技惊四座，建立了第一种非欧几何-作为广义相对论基础的黎曼几何。</p>
+</blockquote>
+<p>考虑常微分方程<br>$$<br>\frac{\partial ^2}{\partial t^2}u&#x3D;c<br>$$<br>根据常微分方程理论，给定初始时刻的位置和速度，方程有解。</p>
+<p>任意位置，弦初始位置和初始速度，给出初始时刻的初始条件<br>$$<br>u(x,t)\mid_{t&#x3D;0}^{}&#x3D;\varphi \left( x \right)<br>$$</p>
+<p>$$<br>\frac{\partial}{\partial t}u\left( x,t \right) \mid_{t&#x3D;0}^{}&#x3D;\psi \left( x \right)<br>$$</p>
+<p>对于有限区域的定解问题，有一个相当自然的求解方法，就是分离变量法或傅里叶方法。</p>
+<p>从物理上，端点引起波的反射，形成驻波。于是弦振动分解为驻波的叠加，这等价于把振动$u(x,t)$分解为调和振动之和。在数学上实现，可以分离变量，构造一个级数解<br>$$<br>\sum_{n&#x3D;1}^{\infty}{X_n\left( x \right) T_n\left( t \right)}<br>$$<br>该级数各项满足边界条件。级数解代回边界条件<br>$$<br>X\left( 0 \right) T\left( t \right) &#x3D;0<br>\<br>X\left( l \right) T\left( t \right) &#x3D;0<br>$$<br>这就是说<br>$$<br>X\left( 0 \right) &#x3D;0<br>\<br>X\left( l \right) &#x3D;0<br>$$<br>级数解代回方程<br>$$<br>X\left( x \right) T^{\prime\prime}\left( t \right) &#x3D;a^2X^{\prime\prime}\left( x \right) T\left( t \right)<br>$$<br>即<br>$$<br>\frac{1}{a^2}\frac{T^{\prime\prime}\left( t \right)}{T\left( t \right)}&#x3D;\frac{X^{\prime\prime}\left( x \right)}{X\left( x \right)}<br>$$<br>令两项结果为常数$-\lambda$<br>$$<br>T^{\prime\prime}\left( t \right) +\lambda a^2T\left( t \right) &#x3D;0<br>$$</p>
+<p>$$<br>X^{\prime\prime}\left( x \right) +\lambda X\left( x \right) &#x3D;0<br>$$</p>
+<p>于是问题归结为，求解该方程组在条件</p>
+<p>空间项和边界条件构成$Sturm-Liouville$本征值问题，本征值是非负实数：</p>
+<p>我们考虑三种情况</p>
+<p>$<br>\lambda &lt;0<br>$时 衰减通解<br>$$<br>X\left( x \right) &#x3D;C_1e^{\sqrt{-\lambda}x}+{C_2}^{-\sqrt{-\lambda}x}<br>$$<br>积分常数由边界条件确定<br>$$<br>C_1+C_2&#x3D;0<br>\<br>C_1e^{\sqrt{-\lambda}l}+{C_2}^{-\sqrt{-\lambda}l}&#x3D;0<br>$$<br>解出$$<br>C_1&#x3D;C_2&#x3D;0<br>$$,即$$<br>X\left( x \right) &#x3D;0<br>$$，方程解$$<br>u(x,t)&#x3D;0<br>$$是平凡解</p>
+<p>$<br>\lambda &#x3D;0<br>$时 ，容易看出解<br>$$<br>X\left( x \right)&#x3D;A+Bx<br>$$<br>积分常数由边界条件确定<br>$$<br>A&#x3D;0<br>\<br>A+Bl&#x3D;0<br>$$<br>解出$$<br>A&#x3D;B&#x3D;0<br>$$,即$$<br>X\left( x \right) &#x3D;0<br>$$，方程解$$<br>u(x,t)&#x3D;0<br>$$是平凡解</p>
+<p>$<br>\lambda &gt;0<br>$时 ,有振荡通解<br>$$<br>X\left( x \right) &#x3D;C\cos \sqrt{\lambda}x+D\sin \sqrt{\lambda}x<br>$$<br>积分常数由边界条件确定<br>$$<br>C&#x3D;0<br>\<br>D\sin \sqrt{\lambda}l&#x3D;0<br>$$<br>根据上述讨论，若$D&#x3D;0$,方程只有平凡解。方程有解要求<br>$$<br>C&#x3D;0<br>\<br>\sin \sqrt{\lambda}l&#x3D;0<br>$$<br>即$$<br>\sqrt{\lambda}l&#x3D;n\pi<br>$$，本征值分立<br>$$<br>\lambda &#x3D;\frac{n^2\pi ^2}{l^2}<br>$$<br>于是本征函数<br>$$<br>X\left( x \right) &#x3D;D\sin \frac{n\pi}{l}x<br>$$<br>时间方程振荡通解<br>$$<br>T\left( t \right) &#x3D;A\cos \sqrt{\lambda}at+B\sin \sqrt{\lambda}at<br>$$<br>带入本征值，得到<br>$$<br>T\left( t \right) &#x3D;A\cos \frac{n\pi a}{l}t+B\sin \frac{n\pi a}{l}t<br>$$<br>方程的一串特解<br>$$<br>\begin{aligned}<br>	u_n\left( x,t \right) &amp;&#x3D;X_n\left( x \right) T_n\left( t \right)\<br>	&amp;&#x3D;\sin \frac{n\pi}{l}x\left( A\cos \frac{n\pi a}{l}t+B\sin \frac{n\pi a}{l}t \right)\<br>\end{aligned}<br>$$</p>
+<ul>
+<li><p>本征振动、固有振动：$u_n\left( x,t \right)$是固定端点振动弦的可能驻波，每一个$n$对应一个驻波，也就是本征振动</p>
+</li>
+<li><p>波长和频率：节点间距半个波长，故驻波波长为$\frac{2l}{n}$角频率&#x2F;固有频率$<br>\omega &#x3D;\frac{n\pi a}{l}<br>$</p>
+</li>
+<li><p>驻波节点：当$$<br>\sin \frac{n\pi}{l}x&#x3D;0\Longleftrightarrow \frac{n\pi}{l}x&#x3D;k\pi\left( k&#x3D;0,1,2… \right)<br>$$，即在<br>$$<br>x&#x3D;\frac{kl}{n}<br>$$<br>共$n+1$个点上，$u\left( x,t \right)$为零.</p>
+</li>
+<li><p>弦的基音、泛音&#x2F;驻波的基波、谐波：</p>
+<p>$u_1\left( x,t \right)$除弦两端外没有节点，波长最长，频率最低，是基音、基波。其余是n次谐波、泛音，泛音决定了声音的色调，即音色</p>
+</li>
+</ul>
+<p>方程的通解是特解叠加<br>$$<br>u\left( x,t \right) &#x3D;\sum_{n&#x3D;1}^{\infty}{u_n\left( x,t \right)}<br>$$<br>自动满足边界条件，通解代回初始条件<br>$$<br>\sum_{n&#x3D;1}^{\infty}{X\left( x \right) T\left( 0 \right)}&#x3D;\varphi \left( x \right) ,,<br>\<br>\sum_{n&#x3D;1}^{\infty}{X\left( x \right) T^{\prime}\left( 0 \right)}&#x3D;\psi \left( x \right)<br>$$<br>于是<br>$$<br>\varphi \left( x \right) &#x3D;\sum_{n&#x3D;1}^{\infty}{A_n\sin \frac{n\pi}{l}x}<br>\<br>\psi \left( x \right) &#x3D;\sum_{n&#x3D;1}^{\infty}{B_n\frac{n\pi a}{l}\sin \frac{n\pi}{l}x}<br>$$<br>问题归结为求系数$$<br>A_nB_n<br>$$观察上述形式，，求系数实际就是把$$<br>\varphi \left( x \right) \psi \left( x \right)<br>$$在有限区间上的正交函数系展成傅里叶级数。</p>
+<ul>
+<li><p>$Sturm-Liouville$本征值问题产生了正交函数系</p>
+</li>
+<li></li>
+</ul>
+<h2 id="为什么要傅里叶级数"><a href="#为什么要傅里叶级数" class="headerlink" title="为什么要傅里叶级数"></a>为什么要傅里叶级数</h2><h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><h3 id="周期现象与调和分析"><a href="#周期现象与调和分析" class="headerlink" title="周期现象与调和分析"></a>周期现象与调和分析</h3><p>周期函数<br>$$<br>\varphi \left( t \right) &#x3D;\varphi \left( t+T \right)<br>\<br>$$<br>最简单的非平凡周期函数是正弦型量，即简谐振动<br>$$<br>A\sin \left( \omega t+\alpha\right)<br>$$<br>列举一系列不同振幅，不同频率（周期）的简谐振动<br>$$<br>A_0,A_1\sin \left( \omega t+\alpha _1 \right) ,A_2\sin \left( 2\omega t+\alpha _2 \right) ,A_3\sin \left( 3\omega t+\alpha _3 \right)<br>$$<br>从几何角度周期函数的图像可以由一系列正弦曲线叠加得到。物理上，复杂振动可以分解为一系列简谐振动。分解周期函数为调和分量的方法称为调和分析。</p>
+<p>利用简谐振动的无穷序列，即三角级数可以构造一个周期函数<br>$$<br>\varphi \left( t \right) &#x3D;A_0+A_1\sin \left( \omega t+\alpha _1 \right) +A_2\sin \left( 2\omega t+\alpha _2 \right) +A_3\sin \left( 3\omega t+\alpha _3 \right) +…<br>$$<br>令<br>$$<br>x&#x3D;\omega t<br>$$<br>得$x$的函数</p>
+<p>$$<br>f\left( x \right) &#x3D;\varphi \left( \frac{x}{\omega} \right)<br>$$<br>它是空间的函数，容易看出周期为$2 \pi$</p>
+<p>变量替换后<br>$$<br>f\left( x \right) &#x3D;A_0+A_1\sin \left( x+\alpha _1 \right) +A_2\sin \left( 2x+\alpha _2 \right) +A_3\sin \left( 3x+\alpha _3 \right) +…<br>$$<br>利用二角和的正弦公式<br>$$<br>\sin \left( a+b \right) &#x3D;\sin a\cos b+\cos a\sin b<br>$$<br>将右侧展开，有<br>$$<br>\begin {align}<br>f\left( x \right)&amp; &#x3D;A_0+A_1\sin \left( x+\alpha _1 \right) +A_2\sin \left( 2x+\alpha _2 \right) +A_3\sin \left( 3x+\alpha _3 \right) +…<br>\<br>&amp;&#x3D;A_0+A_1\left( \sin x\cos \alpha _1+\cos x\sin \alpha _1 \right) +A_2\left( \sin 2x\cos \alpha _2+\cos 2x\sin \alpha <em>2 \right) +…<br>\end {align}<br>$$<br>三角函数是重要的，它的系数不重要。令系数<br>$$<br>A_0&#x3D;\frac{a_0}{2},A_n\sin \alpha <em>n&#x3D;a</em>{n,}A_n\cos \alpha <em>n&#x3D;b_n<br>$$<br>代入就得到：周期为$2 \pi$的周期函数展开式<br>$$<br>\begin{align}<br>f\left( x \right) &amp;&#x3D;\frac{a_0}{2}+\left( a_1\cos x+b_1\sin x \right) +\left( a_2\cos 2x+b_2\sin 2x \right) +…<br>\<br>&amp;&#x3D;\frac{a_0}{2}+\sum</em>{n&#x3D;1}^{\infty}{\left( a_n\cos nx+b_n\sin nx \right)}<br>\end{align}<br>$$<br>周期为$2l$的周期函数展开式<br>$$<br>\begin{aligned}<br>	f\left( x \right) &amp;&#x3D;\frac{a_0}{2}+\left( a_1\cos \frac{n\pi}{l}x+b_1\sin \frac{n\pi}{l}x \right) +\left( a_2\cos 2\frac{n\pi}{l}x+b_2\sin 2\frac{n\pi}{l}x \right) +…\<br>	&amp;&#x3D;\frac{a_0}{2}+\sum</em>{n&#x3D;1}^{\infty}{\left( a_n\cos n\frac{n\pi}{l}x+b_n\sin n\frac{n\pi}{l}x \right)}\<br>\end{aligned}<br>$$</p>
+<p>对于以上形式化的表达式，采用如下方法求解展开系数。</p>
+<h2 id="决定系数的欧拉-傅里叶方法"><a href="#决定系数的欧拉-傅里叶方法" class="headerlink" title="决定系数的欧拉-傅里叶方法"></a>决定系数的欧拉-傅里叶方法</h2><p>该方法为18世纪的欧拉以及19世纪的傅里叶各自独立使用过,</p>
+<p>对周期为$2 \pi$的周期函数展开式，默认它可以两边逐项积分，积分求和交换次序<br>$$<br>\begin{align}<br>\int_{-\pi}^{\pi}{f\left( x \right) dx}&amp;&#x3D;\int_{-\pi}^{\pi}{\left( \frac{a_0}{2}+\sum_{n&#x3D;1}^{\infty}{\left( a_n\cos nx+b_n\sin nx \right)} \right)}dx<br>\<br>&amp;&#x3D;\pi a_0+\sum_{n&#x3D;1}^{\infty}{\left( a_n\int_{-\pi}^{\pi}{\cos nxdx}+b_n\int_{-\pi}^{\pi}{\sin nxdx} \right)}<br>\<br>&amp;&#x3D;\pi a_0<br> \end{align}<br>$$<br>得到系数$a_0$<br>$$<br>a_0&#x3D;\frac{1}{\pi}\int_{-\pi}^{\pi}{f\left( x \right) dx}<br>$$<br>展开式两边乘以$coskx$,再逐项积分<br>$$<br>\begin{align}<br>\int_{-\pi}^{\pi}{f\left( x \right) \cos kxdx}&amp;&#x3D;\int_{-\pi}^{\pi}{\left( \frac{a_0}{2}\cos kx+\sum_{n&#x3D;1}^{\infty}{\left( a_n\cos nx\cos kx+b_n\sin nx\cos kx \right)} \right)}dx<br>\<br>&amp;&#x3D;0+\sum_{n&#x3D;1}^{\infty}{\left( a_n\int_{-\pi}^{\pi}{\cos nx\cos kxdx}+b_n\int_{-\pi}^{\pi}{\sin nx\cos kxdx} \right)}<br>\<br>&amp;&#x3D;0+a_n\int_{-\pi}^{\pi}{\cos nx\cos kxdx}+0<br>\<br>&amp;&#x3D;0+a_n\delta <em>{kn}+0<br>\end{align}<br>$$<br>得到系数$a_k$<br>$$<br>a_k&#x3D;\frac{1}{\pi}\int</em>{-\pi}^{\pi}{f\left( x \right) \cos kxdx}<br>$$<br>同理得到系数$b_k$<br>$$<br>b_k&#x3D;\frac{1}{\pi}\int_{-\pi}^{\pi}{f\left( x \right) \sin kxdx}<br>$$<br>默认周期为$2 l$的周期函数展开式可以两边逐项积分，积分求和交换次序,根据欧拉-傅里叶方法，得到系数<br>$$<br>a_k&#x3D;\frac{1}{l}\int_{-\pi}^{\pi}{f\left( x \right) \cos \frac{k\pi}{l}xdx}<br>$$</p>
+<p>$$<br>b_k&#x3D;\frac{1}{l}\int_{-\pi}^{\pi}{f\left( x \right) \sin \frac{k\pi}{l}xdx}<br>$$</p>
+<h2 id="傅里叶正弦级数与余弦级数"><a href="#傅里叶正弦级数与余弦级数" class="headerlink" title="傅里叶正弦级数与余弦级数"></a>傅里叶正弦级数与余弦级数</h2><p>若$f(x)$是以$2l$为周期的偶函数，则正弦项系数为零，余弦级数<br>$$<br>f\left( x \right) &#x3D;\frac{a_0}{2}+\sum_{n&#x3D;1}^{\infty}{a_n\cos \frac{n\pi}{l}x}<br>$$<br>若$f(x)$是以$2l$为周期的奇函数，则余弦项系数为零，正弦级数<br>$$<br>f\left( x \right) &#x3D;\sum_{n&#x3D;1}^{\infty}{b_n\sin \frac{n\pi}{l}x}<br>$$</p>
+<h3 id="正交函数系"><a href="#正交函数系" class="headerlink" title="正交函数系"></a>正交函数系</h3><p>对两个函数$<br>\varphi \left( x \right)<br>$和$<br>\psi \left( x \right)<br>$，若<br>$$<br>\int_a^b{\varphi \left( x \right) \psi \left( x \right)}dx&#x3D;0<br>$$<br>称函数$<br>\varphi \left( x \right)<br>$和$<br>\psi \left( x \right)<br>$正交</p>
+<p>对函数系，当$$m\ne n$$<br>$$<br>\int_a^b{\varphi _n\left( x \right) \psi _m\left( x \right)}dx&#x3D;0<br>$$<br>即任意两个函数彼此正交，称函数系$<br>\varphi _n\left( x \right) $是正交函数系</p>
+<h4 id="正规假设与归一化"><a href="#正规假设与归一化" class="headerlink" title="正规假设与归一化"></a>正规假设与归一化</h4><p>假设积分结果正定<br>$$<br>\int_a^b{\varphi _n\left( x \right) \psi _n\left( x \right)}dx&#x3D;λ_n<br>$$<br>若积分结果$\lambda _n$为1，则称该函数系正规。通过类似波函数归一化的手段可以使用正定函数系构造正规函数系。</p>
+<h4 id="三角函数系的良好性质"><a href="#三角函数系的良好性质" class="headerlink" title="三角函数系的良好性质"></a>三角函数系的良好性质</h4><p>一类重要的正规正交函数系是三角函数系<br>$$<br>1,\sin x,\cos x,\sin 2x,\cos 2x,…,\sin nx,\cos nx…<br>$$<br>所以<br>$$<br>\int_{-\pi}^{\pi}{\cos nx\cos mxdx}&#x3D;\pi \delta _{nm}<br>$$</p>
+<p>$$<br>\int_{-\pi}^{\pi}{\sin nx\sin mxdx}&#x3D;\pi \delta _{nm}<br>$$</p>
+<p>$$<br>\int_{-\pi}^{\pi}{\sin nx\cos mxdx}&#x3D;0<br>$$</p>
+<h3 id="广义傅里叶级数与广义傅里叶系数"><a href="#广义傅里叶级数与广义傅里叶系数" class="headerlink" title="广义傅里叶级数与广义傅里叶系数"></a>广义傅里叶级数与广义傅里叶系数</h3><p>我定义在${a,b}$内的函数展开为下列形式的函数$$<br>\varphi _n\left( x \right)<br>$$的傅里叶级数：<br>$$<br>f\left( x \right) &#x3D;c_0\varphi _n\left( x \right) +c_1\varphi _1\left( x \right) +…+c_n\varphi _n\left( x \right) +…<br>$$<br>两边乘以$$<br>\psi _m\left( x \right)<br>$$再逐项积分，有<br>$$<br>\int_a^b{f\left( x \right) \psi <em>m\left( x \right)}dx&#x3D;\sum</em>{n&#x3D;0}^{\infty}{c_n}\int_a^b{\varphi _n\left( x \right) \psi <em>m\left( x \right)}dx<br>$$<br>根据正交函数系的积分结果正定假设，傅里叶系数<br>$$<br>c</em>{m&#x3D;}\frac{1}{\lambda _m}\int_a^b{f\left( x \right) \psi <em>m\left( x \right)}dx<br>$$<br>正交函数下系若是正规的，傅里叶系数有更简单形式<br>$$<br>c</em>{m&#x3D;}\int_a^b{f\left( x \right) \psi _m\left( x \right)}dx<br>$$</p>
+<h4 id="实变函数观点下的傅里叶级数几何解释"><a href="#实变函数观点下的傅里叶级数几何解释" class="headerlink" title="实变函数观点下的傅里叶级数几何解释"></a>实变函数观点下的傅里叶级数几何解释</h4><p>根据正交函数系的正规性质<br>$$<br>\int_a^b{\varphi _n\left( x \right) \psi _n\left( x \right)}dx&#x3D;1<br>$$<br>将所有函数看作矢量空间的元素，互相垂直的单位矢量，傅里叶级数<br>$$<br>f\left( x \right) &#x3D;c_0\varphi _n\left( x \right) +c_1\varphi _1\left( x \right) +…+c_n\varphi _n\left( x \right) +…<br>$$<br>便有了几何意义，每个矢量可由基底展开</p>
+<h2 id="傅里叶变换-1"><a href="#傅里叶变换-1" class="headerlink" title="傅里叶变换"></a>傅里叶变换</h2><blockquote>
+<p>分离变量法适用于有界区域，对于无界区域上的定解问题，常使用积分变换法。积分变换基本精神也是分离变量，只是形式上不甚明显。</p>
+</blockquote>
+<h3 id="Parseval-恒等式-无穷维内积空间上的勾股定理"><a href="#Parseval-恒等式-无穷维内积空间上的勾股定理" class="headerlink" title="$Parseval$恒等式-无穷维内积空间上的勾股定理"></a>$Parseval$恒等式-无穷维内积空间上的勾股定理</h3><ul>
+<li>$Lyapunov$给出了黎曼可积函数的<em><strong>Parseval</strong></em>恒等式证明</li>
+</ul>
+<h2 id="拉普拉斯变换"><a href="#拉普拉斯变换" class="headerlink" title="拉普拉斯变换"></a>拉普拉斯变换</h2><h2 id="共形变换"><a href="#共形变换" class="headerlink" title="共形变换"></a>共形变换</h2><h3 id="共形变换就是保角变换。"><a href="#共形变换就是保角变换。" class="headerlink" title="共形变换就是保角变换。"></a>共形变换就是保角变换。</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/08/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/" data-id="cuiduvYW4k0NrXttkaQ3-GF0F" data-title="" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-quantum-expresso" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2026/05/08/quantum-expresso/" class="article-date">
@@ -268,6 +358,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2026/05/08/%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2026/05/08/quantum-expresso/">(no title)</a>
