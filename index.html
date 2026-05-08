@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-quantum-expresso" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/08/quantum-expresso/" class="article-date">
+  <time class="dt-published" datetime="2026-05-08T12:22:38.000Z" itemprop="datePublished">2026-05-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/05/08/quantum-expresso/">quantum expresso</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="定态问题近似方法"><a href="#定态问题近似方法" class="headerlink" title="定态问题近似方法"></a>定态问题近似方法</h1><blockquote>
+<p>微扰(<em>perturbation</em>)就是摄动,最初源自师承伯努利的欧拉在求解天体力学问题时发展的一套近似方法。拉格朗日，拉普拉斯等人继续发展了摄动法。拿破仑阅读《天体力学》时，问拉普拉斯：你这本书里怎么没有上帝的位置？人牛顿的书里都有提到上帝的哦。今天我熟知，牛顿力学是决定论的，体系的演化按照二阶常微分方程。初条件需要一个速度，系统才开始演化。当时牛顿认为，上帝第一推动给出这个速度。另外在《原理》中，仍然可以看见这样的话：…上帝的荣耀。面对拿破仑的问题，但是拉老师答曰：我不需要那个假设。</p>
+<p>场论微扰计算往往会出现发散，并且高级微扰的级数收敛证明很是困难。场论使用重整化或者维数规则化来避免发散。</p>
+</blockquote>
+<h2 id="非简并定态微扰"><a href="#非简并定态微扰" class="headerlink" title="非简并定态微扰"></a>非简并定态微扰</h2><h3 id="思路和本征方程"><a href="#思路和本征方程" class="headerlink" title="思路和本征方程"></a>思路和本征方程</h3><p>本征方程<br>$$<br>\hat{H}\left( \lambda \right) |\psi _n\left( \lambda \right) \rangle &#x3D;E_n\left( \lambda \right) |\psi _n\left( \lambda \right) \rangle<br>$$<br>哈密顿量带有微扰<br>$$<br>\hat{H}&#x3D;\hat{H}_0+\hat{H}^{\prime}<br>$$<br>添加示踪系数<br>$$<br>\hat{H}\left( \lambda \right) &#x3D;\hat{H}_0+\lambda \hat{H}^{\prime}<br>$$<br>把态矢和本征值作幂级数展开<br>$$<br>|\psi _n\left( \lambda \right) \rangle &#x3D;\lambda ^0|\psi _{n}^{0}\rangle +\lambda ^1|\psi _{n}^{1}\rangle +\lambda ^2|\psi _{n}^{2}\rangle +\lambda ^3|\psi _{n}^{3}\rangle +…<br>$$</p>
+<p>$$<br>E_n\left( \lambda \right) &#x3D;\lambda ^0E_{n}^{0}+\lambda ^1E_{n}^{1}++\lambda ^2E_{n}^{2}++\lambda ^3E_{n}^{3}+…<br>$$</p>
+<p>本征方程变为<br>$$<br>\left( \hat{H}_0+\lambda \hat{H}^{\prime} \right) \left( \lambda ^0|\psi <em>{n}^{0}\rangle +\lambda ^1|\psi <em>{n}^{1}\rangle +\lambda ^2|\psi <em>{n}^{2}\rangle +\lambda ^3|\psi <em>{n}^{3}\rangle +… \right) &#x3D;\left( \lambda ^0E</em>{n}^{0}+\lambda ^1E</em>{n}^{1}++\lambda ^2E</em>{n}^{2}++\lambda ^3E</em>{n}^{3}+… \right) \left( \lambda ^0|\psi _{n}^{0}\rangle +\lambda ^1|\psi _{n}^{1}\rangle +\lambda ^2|\psi _{n}^{2}\rangle +\lambda ^3|\psi _{n}^{3}\rangle +… \right)<br>$$<br>按照示踪系数幂次，写出各级微扰的本征方程<br>$$<br>\begin{align}<br>\hat{H}_0|\psi <em>{n}^{0}\rangle &amp;&#x3D;E</em>{n}^{0}|\psi _{n}^{0}\rangle<br>\<br>\hat{H}_0|\psi _{n}^{1}\rangle +\hat{H}^{\prime}|\psi <em>{n}^{0}\rangle &amp;&#x3D;E</em>{n}^{0}|\psi <em>{n}^{1}\rangle +E</em>{n}^{1}|\psi _{n}^{0}\rangle<br>\<br>\hat{H}_0|\psi _{n}^{2}\rangle +\hat{H}^{\prime}|\psi <em>{n}^{1}\rangle &amp;&#x3D;E</em>{n}^{0}|\psi <em>{n}^{2}\rangle +E</em>{n}^{1}|\psi <em>{n}^{1}\rangle +E</em>{n}^{2}|\psi _{n}^{0}\rangle<br>\<br>\hat{H}_0|\psi _{n}^{3}\rangle +\hat{H}^{\prime}|\psi <em>{n}^{2}\rangle &amp;&#x3D;E</em>{n}^{0}|\psi <em>{n}^{3}\rangle +E</em>{n}^{1}|\psi <em>{n}^{2}\rangle +E</em>{n}^{2}|\psi <em>{n}^{1}\rangle +E</em>{n}^{3}|\psi _{n}^{0}\rangle<br>\end{align}<br>$$<br>其中，零级微扰正是体系的精确解。其余<strong>各级微扰均依赖于精确解</strong>。可见微扰是一种递推方法。</p>
+<h3 id="各级近似的求解过程"><a href="#各级近似的求解过程" class="headerlink" title="各级近似的求解过程"></a>各级近似的求解过程</h3><p>各级微扰均依赖于精确解，我们从精确解出发，求解各级修正项的本征值，态矢，波函数</p>
+<p>我们采用$\hat{H}_0$表象，正交完备归一函数系$$<br>\left{ |\psi _{n}^{0}\rangle \right}<br>$$</p>
+<h4 id="一级微扰"><a href="#一级微扰" class="headerlink" title="一级微扰"></a>一级微扰</h4><p>在$\hat{H}_0$表象下，一级态矢：<br>$$<br>|\psi <em>{n}^{1}\rangle &#x3D;\sum_i{a</em>{i}^{1}|\psi _{i}^{0}\rangle}<br>$$<br>带入一级近似的本征方程<br>$$<br>\hat{H}_0|\psi _{n}^{1}\rangle +\hat{H}^{\prime}|\psi <em>{n}^{0}\rangle &#x3D;E</em>{n}^{0}|\psi <em>{n}^{1}\rangle +E</em>{n}^{1}|\psi <em>{n}^{0}\rangle<br>$$<br>得到<br>$$<br>\hat{H}<em>0\sum_i{a</em>{i}^{1}|\psi <em>{i}^{0}\rangle}+\hat{H}^{\prime}|\psi <em>{n}^{0}\rangle &#x3D;E</em>{n}^{0}\sum_i{a</em>{i}^{1}|\psi <em>{i}^{0}\rangle}+E</em>{n}^{1}|\psi <em>{n}^{0}\rangle<br>$$<br>根据精确解，其中$<br>\hat{H}<em>0|\psi <em>{i}^{0}\rangle &#x3D;E</em>{i}^{0}|\psi <em>{i}^{0}\rangle<br>$,上式变为<br>$$<br>\sum_i{a</em>{i}^{1}E</em>{i}^{0}|\psi <em>{i}^{0}\rangle}+\hat{H}^{\prime}|\psi <em>{n}^{0}\rangle &#x3D;\sum_i{a</em>{i}^{1}E</em>{n}^{0}|\psi <em>{i}^{0}\rangle}+E</em>{n}^{1}|\psi <em>{n}^{0}\rangle<br>$$<br>整理<br>$$<br>\sum_i{a</em>{i}^{1}\left( E</em>{i}^{0}-E</em>{n}^{0} \right) |\psi _{i}^{0}\rangle}+\hat{H}^{\prime}|\psi <em>{n}^{0}\rangle &#x3D;E</em>{n}^{1}|\psi _{n}^{0}\rangle<br>$$<br>内积$$<br>\langle \psi _{m}^{0}|<br>$$</p>
+<p>$$<br>\sum_i{a_{i}^{1}\langle \psi <em>{m}^{0}|\left( E</em>{i}^{0}-E_{n}^{0} \right) |\psi _{i}^{0}\rangle}+\langle \psi _{m}^{0}|\hat{H}^{\prime}|\psi _{n}^{0}\rangle &#x3D;\langle \psi <em>{m}^{0}|E</em>{n}^{1}|\psi _{n}^{0}\rangle<br>$$</p>
+<p>令$i&#x3D;m$<br>$$<br>a_{m}^{1}\left( E_{m}^{0}-E_{n}^{0} \right) +\langle \psi <em>{m}^{0}|\hat{H}^{\prime}|\psi <em>{n}^{0}\rangle &#x3D;\langle \psi <em>{m}^{0}|E</em>{n}^{1}|\psi <em>{n}^{0}\rangle<br>$$<br>令$m&#x3D;n$，得到一级本征值修正项<br>$$<br>E</em>{n}^{1}&#x3D;\langle \psi <em>{n}^{0}|\hat{H}^{\prime}|\psi <em>{n}^{0}\rangle<br>$$<br>令$<br>,,m\ne n<br>$，得到一级波函数修正项<br>$$<br>a</em>{m}^{1}&#x3D;\frac{\langle \psi <em>{m}^{0}|\hat{H}^{\prime}|\psi <em>{n}^{0}\rangle}{E</em>{n}^{0}-E</em>{m}^{0}}&#x3D;\frac{\hat{H}</em>{mn}^{\prime}}{E</em>{n}^{0}-E</em>{m}^{0}}<br>\<br>$$<br>一级态矢修正项<br>$$<br>|\psi <em>{n}^{1}\rangle &#x3D;\sum_m{a</em>{m}^{1}|\psi <em>{m}^{0}\rangle}&#x3D;\sum_m{\frac{\hat{H}</em>{mn}^{\prime}}{E_{n}^{0}-E_{m}^{0}}|\psi _{m}^{0}\rangle}<br>$$</p>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4><ul>
+<li><p>$m&#x3D;n$并不能给出波函数的论证</p>
+<p>若$m&#x3D;n$根据归一化条件，有波函数是纯虚数或零。</p>
+</li>
+<li><p>微扰的使用条件，什么是微扰的理解<br>$$<br>\left| \frac{\hat{H}<em>{mn}^{\prime}}{E</em>{n}^{0}-E_{m}^{0}} \right|&lt;&lt;1<br>$$</p>
+</li>
+</ul>
+<h4 id="二级微扰"><a href="#二级微扰" class="headerlink" title="二级微扰"></a>二级微扰</h4><p>二级近似的本征方程<br>$$<br>\hat{H}<em>0|\psi <em>{n}^{2}\rangle +\hat{H}^{\prime}|\psi <em>{n}^{1}\rangle &#x3D;E</em>{n}^{0}|\psi <em>{n}^{2}\rangle +E</em>{n}^{1}|\psi <em>{n}^{1}\rangle +E</em>{n}^{2}|\psi <em>{n}^{0}\rangle<br>$$<br>在$\hat{H}<em>0$表象下，一级态矢：<br>$$<br>|\psi <em>{n}^{1}\rangle &#x3D;\sum_i{a</em>{i}^{1}|\psi <em>{i}^{0}\rangle}<br>$$<br>在$\hat{H}<em>0$表象下，二级态矢：<br>$$<br>|\psi <em>{n}^{2}\rangle &#x3D;\sum_i{a</em>{i}^{2}|\psi <em>{i}^{0}\rangle}<br>$$<br>带入本征方程得到<br>$$<br>\hat{H}<em>0\sum_i{a</em>{i}^{2}|\psi <em>{i}^{0}\rangle}+\hat{H}^{\prime}\sum_i{a</em>{i}^{1}|\psi <em>{i}^{0}\rangle}&#x3D;E</em>{n}^{0}\sum_i{a</em>{i}^{2}|\psi <em>{i}^{0}\rangle}+E</em>{n}^{1}\sum_i{a</em>{i}^{1}|\psi <em>{i}^{0}\rangle}+E</em>{n}^{2}|\psi <em>{n}^{0}\rangle<br>$$<br>根据精确解，其中$<br>\hat{H}<em>0|\psi <em>{i}^{0}\rangle &#x3D;E</em>{i}^{0}|\psi <em>{i}^{0}\rangle<br>$,上式变为<br>$$<br>\sum_i{a</em>{i}^{2}E</em>{i}^{0}|\psi <em>{i}^{0}\rangle}+\hat{H}^{\prime}\sum_i{a</em>{i}^{1}|\psi <em>{i}^{0}\rangle}&#x3D;E</em>{n}^{0}\sum_i{a</em>{i}^{2}|\psi <em>{i}^{0}\rangle}+E</em>{n}^{1}\sum_i{a</em>{i}^{1}|\psi <em>{i}^{0}\rangle}+E</em>{n}^{2}|\psi <em>{n}^{0}\rangle<br>$$<br>整理<br>$$<br>\sum_i{a</em>{i}^{2}\left( E</em>{i}^{0}-E</em>{n}^{0} \right) |\psi <em>{i}^{0}\rangle}+\hat{H}^{\prime}\sum_i{a</em>{i}^{1}|\psi <em>{i}^{0}\rangle}&#x3D;E</em>{n}^{1}\sum_i{a</em>{i}^{1}|\psi <em>{i}^{0}\rangle}+E</em>{n}^{2}|\psi <em>{n}^{0}\rangle<br>$$<br>内积$<br>\langle \psi <em>{m}^{0}|<br>$<br>$$<br>\sum_i{a</em>{i}^{2}\langle \psi <em>{m}^{0}|\left( E</em>{i}^{0}-E</em>{n}^{0} \right) |\psi <em>{i}^{0}\rangle}+\sum_i{a</em>{i}^{1}\langle \psi <em>{m}^{0}|\hat{H}^{\prime}|\psi <em>{i}^{0}\rangle}&#x3D;E</em>{n}^{1}\sum_i{a</em>{i}^{1}\langle \psi <em>{m}^{0}||\psi <em>{i}^{0}\rangle}+E</em>{n}^{2}\langle \psi <em>{m}^{0}|\psi <em>{n}^{0}\rangle<br>$$<br>令$m&#x3D;n$，得到二级本征值修正项<br>$$<br>\begin{align}<br>E</em>{n}^{2}&amp;&#x3D;\sum_i{a</em>{i}^{1}\langle \psi <em>{n}^{0}|\hat{H}^{\prime}|\psi <em>{i}^{0}\rangle}<br>\<br>&amp;&#x3D;\sum_i{\frac{\hat{H}</em>{in}^{\prime}}{E</em>{n}^{0}-E</em>{i}^{0}}\langle \psi <em>{n}^{0}|\hat{H}^{\prime}|\psi <em>{i}^{0}\rangle}<br>\<br>&amp;&#x3D;\sum_i{\frac{\hat{H}</em>{in}^{\prime}}{E</em>{n}^{0}-E</em>{i}^{0}}}\hat{H}<em>{ni}^{\prime}<br>\<br>&amp;&#x3D;\sum_i{\frac{\hat{H}</em>{in}^{\prime}}{E_{n}^{0}-E_{i}^{0}}}\hat{H}<em>{in}^{\prime*}<br>\<br>&amp;&#x3D;\sum_i{\frac{\left| \hat{H}</em>{in}^{\prime} \right|^2}{E_{n}^{0}-E_{i}^{0}}}<br>\<br>&amp;&#x3D;\sum_m{\frac{\left| \hat{H}<em>{mn}^{\prime} \right|^2}{E</em>{n}^{0}-E_{m}^{0}}}<br>\end{align}<br>$$<br>用到了$Hermite$算符的性质。</p>
+<h3 id="微扰结论"><a href="#微扰结论" class="headerlink" title="微扰结论"></a>微扰结论</h3><p>本征值二级修正结果：<br>$$<br>E_n&#x3D;E_{n}^{0}+\hat{H}<em>{nn}^{\prime}+\sum_m{\frac{\left| \hat{H}</em>{mn}^{\prime} \right|^2}{E_{n}^{0}-E_{m}^{0}}}<br>$$<br>态矢一级修正结果<br>$$<br>|\psi <em>n\rangle &#x3D;|\psi <em>{n}^{0}\rangle +\sum_m{\frac{\hat{H}</em>{mn}^{\prime}}{E</em>{n}^{0}-E_{m}^{0}}|\psi _{m}^{0}\rangle}<br>$$</p>
+<h3 id="非简并定态微扰例-外场中谐振子"><a href="#非简并定态微扰例-外场中谐振子" class="headerlink" title="非简并定态微扰例-外场中谐振子"></a>非简并定态微扰例-外场中谐振子</h3><h4 id="无外场的谐振子精确解"><a href="#无外场的谐振子精确解" class="headerlink" title="无外场的谐振子精确解"></a>无外场的谐振子精确解</h4><p>$$<br>\hat{H}_0|\psi <em>{n}^{0}\rangle &#x3D;E</em>{n}^{0}|\psi _{n}^{0}\rangle<br>$$</p>
+<p>其中，<br>$$<br>\hat{H}_0&#x3D;-\frac{\hbar ^2}{2m}\frac{d^2}{dx^2}+\frac{1}{2}m\omega ^2x^2<br>$$</p>
+<p>$$<br>|\psi _{n}^{0}\rangle &#x3D;N_nH_n\left( \alpha x \right) e^{-\frac{\alpha ^2x^2}{2}}<br>$$</p>
+<p>$$<br>E_{n}^{0}&#x3D;\left( n+\frac{1}{2} \right) \hbar \omega<br>$$</p>
+<h2 id="简并定态微扰"><a href="#简并定态微扰" class="headerlink" title="简并定态微扰"></a>简并定态微扰</h2><p>非简并体系的本征方程<br>$$<br>\hat{H}\left( \lambda \right) |\psi _n\left( \lambda \right) \rangle &#x3D;E_n\left( \lambda \right) |\psi _n\left( \lambda \right) \rangle<br>$$<br>非兼并是说$E_n\left( \lambda \right)$与态矢$|\psi _n\left( \lambda \right) \rangle$一一对应，而简并是说，$E_n\left( \lambda \right)$对应多个态矢$|\psi _n\left( \lambda \right) \rangle$</p>
+<p>如果对应$f_n$个态矢，就是$f_n$重简并。</p>
+<p>哈密顿量带有微扰<br>$$<br>\hat{H}&#x3D;\hat{H}_0+\hat{H}^{\prime}<br>$$<br>添加示踪系数<br>$$<br>\hat{H}\left( \lambda \right) &#x3D;\hat{H}_0+\lambda \hat{H}^{\prime}<br>$$<br>把态矢和本征值作幂级数展开<br>$$<br>|\psi _n\left( \lambda \right) \rangle &#x3D;\lambda ^0|\psi _{n}^{0}\rangle +\lambda ^1|\psi _{n}^{1}\rangle +\lambda ^2|\psi _{n}^{2}\rangle +\lambda ^3|\psi _{n}^{3}\rangle +…<br>$$</p>
+<p>$$<br>E_n\left( \lambda \right) &#x3D;\lambda ^0E_{n}^{0}+\lambda ^1E_{n}^{1}++\lambda ^2E_{n}^{2}++\lambda ^3E_{n}^{3}+…<br>$$</p>
+<p>本征方程变为<br>$$<br>\left( \hat{H}_0+\lambda \hat{H}^{\prime} \right) \left( \lambda ^0|\psi <em>{n}^{0}\rangle +\lambda ^1|\psi <em>{n}^{1}\rangle +\lambda ^2|\psi <em>{n}^{2}\rangle +\lambda ^3|\psi <em>{n}^{3}\rangle +… \right) &#x3D;\left( \lambda ^0E</em>{n}^{0}+\lambda ^1E</em>{n}^{1}++\lambda ^2E</em>{n}^{2}++\lambda ^3E</em>{n}^{3}+… \right) \left( \lambda ^0|\psi _{n}^{0}\rangle +\lambda ^1|\psi _{n}^{1}\rangle +\lambda ^2|\psi _{n}^{2}\rangle +\lambda ^3|\psi _{n}^{3}\rangle +… \right)<br>$$<br>按照示踪系数幂次，写出各级微扰的本征方程<br>$$<br>\begin{align}<br>\hat{H}_0|\psi <em>{n}^{0}\rangle &amp;&#x3D;E</em>{n}^{0}|\psi _{n}^{0}\rangle<br>\<br>\hat{H}_0|\psi _{n}^{1}\rangle +\hat{H}^{\prime}|\psi <em>{n}^{0}\rangle &amp;&#x3D;E</em>{n}^{0}|\psi <em>{n}^{1}\rangle +E</em>{n}^{1}|\psi _{n}^{0}\rangle<br>\<br>\hat{H}_0|\psi _{n}^{2}\rangle +\hat{H}^{\prime}|\psi <em>{n}^{1}\rangle &amp;&#x3D;E</em>{n}^{0}|\psi <em>{n}^{2}\rangle +E</em>{n}^{1}|\psi <em>{n}^{1}\rangle +E</em>{n}^{2}|\psi _{n}^{0}\rangle<br>\<br>\hat{H}_0|\psi _{n}^{3}\rangle +\hat{H}^{\prime}|\psi <em>{n}^{2}\rangle &amp;&#x3D;E</em>{n}^{0}|\psi <em>{n}^{3}\rangle +E</em>{n}^{1}|\psi <em>{n}^{2}\rangle +E</em>{n}^{2}|\psi <em>{n}^{1}\rangle +E</em>{n}^{3}|\psi _{n}^{0}\rangle<br>\end{align}<br>$$<br>其中，零级微扰正是体系的精确解。其余<strong>各级微扰均依赖于精确解</strong>。可见微扰是一种递推方法。</p>
+<p>既然体系是$f_n$重简并，则零级态矢可由简并态矢展开<br>$$<br>|\psi <em>{n}^{0}\rangle &#x3D;\sum</em>{i&#x3D;1}^{f_n}{C_{i}^{0}|\varphi <em>{ni}\rangle}<br>$$<br>精确解<br>$$<br>\hat{H}<em>0|\psi <em>{n}^{0}\rangle &#x3D;\sum</em>{i&#x3D;1}^{f_n}{C</em>{i}^{0}\hat{H}<em>0|\varphi <em>{ni}\rangle &#x3D;}\sum</em>{i&#x3D;1}^{f_n}{C</em>{i}^{0}E</em>{n}^{0}|\varphi <em>{ni}\rangle &#x3D;}E</em>{n}^{0}\sum_{i&#x3D;1}^{f_n}{C_{i}^{0}|\varphi _{ni}\rangle}<br>$$<br>只知道本征值，其实并不知道本征矢</p>
+<h3 id="一级近似"><a href="#一级近似" class="headerlink" title="一级近似"></a>一级近似</h3><p>$$<br>\hat{H}_0|\psi _{n}^{1}\rangle +\hat{H}^{\prime}|\psi <em>{n}^{0}\rangle &#x3D;E</em>{n}^{0}|\psi <em>{n}^{1}\rangle +E</em>{n}^{1}|\psi _{n}^{0}\rangle<br>$$</p>
+<p>带入零级态矢展开式$|\psi <em>{n}^{0}\rangle &#x3D;\sum</em>{i&#x3D;1}^{f_n}{C_{i}^{0}|\varphi <em>{ni}\rangle}$<br>$$<br>\hat{H}<em>0|\psi <em>{n}^{1}\rangle +\hat{H}^{\prime}\sum</em>{i&#x3D;1}^{f_n}{C</em>{i}^{0}|\varphi <em>{ni}\rangle}&#x3D;E</em>{n}^{0}|\psi <em>{n}^{1}\rangle +E</em>{n}^{1}\sum</em>{i&#x3D;1}^{f_n}{C_{i}^{0}|\varphi <em>{ni}\rangle}<br>$$<br>整理<br>$$<br>\left( \hat{H}<em>0-E</em>{n}^{0} \right) |\psi <em>{n}^{1}\rangle &#x3D;-\hat{H}^{\prime}\sum</em>{i&#x3D;1}^{f_n}{C</em>{i}^{0}|\varphi <em>{ni}\rangle}+E</em>{n}^{1}\sum_{i&#x3D;1}^{f_n}{C_{i}^{0}|\varphi <em>{ni}\rangle}<br>$$<br>内积$<br>\langle \varphi <em>{nj}|$<br>$$<br>\langle \varphi <em>{nj}|\left( \hat{H}<em>0-E</em>{n}^{0} \right) |\psi <em>{n}^{1}\rangle &#x3D;-\sum</em>{i&#x3D;1}^{f_n}{C</em>{i}^{0}\langle \varphi <em>{nj}|\hat{H}^{\prime}|\varphi <em>{ni}\rangle}+E</em>{n}^{1}\sum</em>{i&#x3D;1}^{f_n}{C</em>{i}^{0}\langle \varphi <em>{nj}|\varphi <em>{ni}\rangle}<br>$$<br>其中$<br>\langle \varphi <em>{nj}|\hat{H}<em>0&#x3D;E</em>{n}^{0}\langle \varphi <em>{nj}|<br>$于是<br>$$<br>0&#x3D;-\sum</em>{i&#x3D;1}^{f_n}{C</em>{i}^{0}\hat{H}</em>{ji}^{\prime}}+E</em>{n}^{1}\sum</em>{i&#x3D;1}^{f_n}{C_{i}^{0}\delta <em>{ji}}<br>$$<br>则<br>$$<br>\sum</em>{i&#x3D;1}^{f_n}{C_{i}^{0}\left( \hat{H}<em>{ji}^{\prime}-E</em>{n}^{1}\delta <em>{ji} \right)}&#x3D;0<br>$$<br>矩阵形式<br>$$<br>\left( \begin{matrix}<br>	H</em>{11}^{\prime}-E_{n}^{1}&amp;		H_{12}^{\prime}&amp;		H_{13}^{\prime}&amp;		…\<br>	H_{21}^{\prime}&amp;		H_{22}^{\prime}-E_{n}^{1}&amp;		H_{23}^{\prime}&amp;		…\<br>	H_{31}^{\prime}&amp;		H_{32}^{\prime}&amp;		H_{33}^{\prime}-E_{n}^{1}&amp;		…\<br>	…&amp;		…&amp;		…&amp;		…\<br>\end{matrix} \right) \left( \begin{array}{c}<br>	C_{1}^{0}\<br>	C_{2}^{0}\<br>	C_{3}^{0}\<br>	…\<br>\end{array} \right) &#x3D;0<br>$$<br>系数是本征矢的微扰一级近似，本征值是微扰一级修正</p>
+<p>非零解条件：久期方程<br>$$<br>\left| \begin{matrix}<br>	H_{11}^{\prime}-E_{n}^{1}&amp;		H_{12}^{\prime}&amp;		H_{13}^{\prime}&amp;		…&amp;		H_{1f_n}^{\prime}\<br>	H_{21}^{\prime}&amp;		H_{22}^{\prime}-E_{n}^{1}&amp;		H_{23}^{\prime}&amp;		…&amp;		H_{2f_n}^{\prime}\<br>	H_{31}^{\prime}&amp;		H_{32}^{\prime}&amp;		H_{33}^{\prime}-E_{n}^{1}&amp;		…&amp;		H_{3f_n}^{\prime}\<br>	…&amp;		…&amp;		…&amp;		…&amp;		…\<br>	H_{f_n1}^{\prime}&amp;		H_{f_n2}^{\prime}&amp;		H_{f_n3}^{\prime}&amp;		…&amp;		H_{f_nf_n}^{\prime}-E_{n}^{1}\<br>\end{matrix} \right|&#x3D;0<br>$$<br>这是一个$f_n$次方程，虽然根据伽罗瓦理论，高次方程没有代数形式解，但是原则上它应该有$f_n$个解。</p>
+<p>若没有微扰，方程变成对角形式，<br>$$<br>\left( E_{n}^{1} \right) ^{f_n}&#x3D;0<br>$$<br>方程有$f_n$个重根，体系$f_n$重兼并</p>
+<p>若有微扰，方程根个数不变，但不全是重根。简并度降低，出现退简并。如果没有重根，则体系完全解除简并。</p>
+<h3 id="简并定态微扰例-氢原子斯塔克效应"><a href="#简并定态微扰例-氢原子斯塔克效应" class="headerlink" title="简并定态微扰例-氢原子斯塔克效应"></a>简并定态微扰例-氢原子斯塔克效应</h3><blockquote>
+<p>从直觉上，磁效应比假弱，zemann效应应该后发现。但是历史上，stark效应后发现。外加电场强度小于原子核引起的电场玻尔半径</p>
+</blockquote>
+<h2 id="变分法"><a href="#变分法" class="headerlink" title="变分法"></a>变分法</h2><blockquote>
+<p>给定拉格朗日量或者哈密顿量，构造一个变量的泛函。使用最少动作原理，对泛函取极值，即得到动力学方程。薛定谔方程也不例外</p>
+</blockquote>
+<h3 id="变分原理"><a href="#变分原理" class="headerlink" title="变分原理"></a>变分原理</h3><p>定理：定义平均值泛函<br>$$<br>&lt;E\left[ \psi \left( x \right) \right] &gt;&#x3D;\frac{\langle \psi \left( x \right) |\left. \hat{H} \right|\psi \left( x \right) \rangle}{\langle \psi \left( x \right) |\psi \left( x \right) \rangle}<br>$$<br>变分<br>$$<br>\delta &lt;E\left[ \psi \left( x \right) \right] &gt;&#x3D;0<br>$$<br>为零的充要条件是<br>$$<br>\left. \hat{H} \right|\psi \left( x \right) \rangle &#x3D;\left. E \right|\psi \left( x \right) \rangle<br>$$<br>哈密顿量的本征值使平均值泛函为零</p>
+<ul>
+<li>对任意可对角化算子均成立</li>
+<li>本征值问题可以化为泛函极值问题</li>
+</ul>
+<h3 id="构造波函数-参数变分法"><a href="#构造波函数-参数变分法" class="headerlink" title="构造波函数-参数变分法"></a>构造波函数-参数变分法</h3><p>薛定谔方程是二阶偏微分方程，根据微分方程理论，定性假设一个波函数$$<br>\psi \left( x \right) $$为提高精度，构造含参波函数<br>$$<br>\psi \left( x,\lambda _1,\lambda _2,…\lambda _n \right)<br>$$<br>它满足变分原理<br>$$<br>\frac{\partial &lt;E\left( \lambda _1,\lambda _2,…\lambda _n \right) &gt;}{\partial \lambda _i}&#x3D;0<br>$$<br>其中<br>$$<br>&lt;E\left[ \psi \left( x \right) \right] &gt;&#x3D;\frac{\langle \psi \left( x,\lambda _1,\lambda _2,…\lambda _n \right) |\left. \hat{H} \right|\psi \left( x,\lambda _1,\lambda _2,…\lambda _n \right) \rangle}{\langle \psi \left( x,\lambda _1,\lambda _2,…\lambda _n \right) |\psi \left( x,\lambda _1,\lambda _2,…\lambda _n \right) \rangle}<br>$$<br>调节参数$\lambda_i$使波函数取最佳值</p>
+<p>变分法常用于基态。如果有了基态波函数$$<br>,,|\varphi _0\rangle<br>$$，我们可以求第一激发态。原则上，我们知道属于同一厄密算符不同本征值的本征矢互相正交。所以<br>$$<br>\langle \varphi _1|\varphi _0\rangle &#x3D;0<br>$$<br>对于一个实际体系，比如$$<br>V\left( -x \right) &#x3D;V\left( x \right)<br>$$束缚态，根据激发态节点定理和宇称定理，体系的基态$$<br>,,|\varphi _0\rangle<br>$$没有节点，是偶函数。第一激发态有一个节点，是奇函数。二者正交。我们猜的第一激发态波函数，并不一定和基态正交。它的具体形式可以用如下普适手续构造</p>
+<p>令正交的态矢<br>$$<br>|\varphi _{1}^{\prime}\rangle &#x3D;|\varphi _1\rangle -\langle \varphi _1|\varphi _0\rangle |\varphi _0\rangle<br>$$<br>则<br>$$<br>\langle \varphi _0|\varphi _{1}^{\prime}\rangle &#x3D;\langle \varphi _0|\varphi _1\rangle -\langle \varphi _1|\varphi _0\rangle \langle \varphi _0|\varphi _0\rangle&#x3D;0<br>$$<br>变分法一般不算第二激发态。微扰论处理高激发态时，也容易失效</p>
+<h3 id="变分法例-仅考虑静电作用的氦原子基态"><a href="#变分法例-仅考虑静电作用的氦原子基态" class="headerlink" title="变分法例-仅考虑静电作用的氦原子基态"></a>变分法例-仅考虑静电作用的氦原子基态</h3><h2 id="WKB-近似"><a href="#WKB-近似" class="headerlink" title="WKB 近似"></a>WKB 近似</h2><p>对于超导，超流等问题，他们的解不是相互作用耦合常数的解析函数，不能展开成相互作用即微扰项德幂级数，因此不能用微扰论求解。于是想到，找另一个参数展开。对于和经典情况相差不大的体系，按小量$\hbar$展开。这就是WKB近似。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/08/quantum-expresso/" data-id="cuiduqTWc8FctO2UawKZ_uDTY" data-title="quantum expresso" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-article-title" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/08/article-title/" class="article-date">
+  <time class="dt-published" datetime="2026-05-08T12:20:41.000Z" itemprop="datePublished">2026-05-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/05/08/article-title/">article title</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/08/article-title/" data-id="cuidiV7jYALoZoPmueT2ycu-s" data-title="article title" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/05/08/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2026-05-08T12:01:53.893Z" itemprop="datePublished">2026-05-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/05/08/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/05/08/hello-world/" data-id="cuidavM4NXWUXwXsLUZFj9xer" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/05/">May 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/05/08/quantum-expresso/">quantum expresso</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/08/article-title/">article title</a>
+          </li>
+        
+          <li>
+            <a href="/2026/05/08/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
